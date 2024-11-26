@@ -34,27 +34,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 </script>
 
 <template>
-  <!-- <nav
-    class="fixed left-0 top-0 flex h-20 w-full items-center justify-between bg-slate-50 px-40 text-lg shadow-lg"
-  >
-    <div>
-      <ul class="flex space-x-10">
-        <li v-for="item in nav" :key="item.name">
-          <NuxtLink
-            :to="item.route"
-            class="font-medium text-slate-900 transition-colors hover:text-slate-500"
-            >{{ item.name }}</NuxtLink
-          >
-        </li>
-      </ul>
-    </div>
-    <div>
-      
-    </div>
-  </nav> -->
   <Disclosure
     as="nav"
-    class="fixed left-0 top-0 w-full bg-white shadow-md"
+    class="fixed left-0 top-0 z-10 w-full bg-white shadow-md"
     v-slot="{ open }"
   >
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -121,17 +103,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
                     </MenuItem>
                   </li>
                 </ul>
-                <!-- 
-                <ul class="py-1">
-                  <li v-for="locale in availableLocales" :key="locale.code">
-                    <MenuItem
-                      @click="switchLocalePath(locale.code)"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    >
-                      {{ locale.name }}
-                    </MenuItem>
-                  </li>
-                </ul> -->
               </MenuItems>
             </transition>
           </Menu>
