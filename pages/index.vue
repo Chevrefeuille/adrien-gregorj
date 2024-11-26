@@ -6,6 +6,24 @@ const { t } = useI18n();
 import publications, { type Publication } from "@/assets/data/publications";
 
 const publicationList: Publication[] = publications;
+
+const links = [
+  {
+    name: "GitHub",
+    url: "https://github.com/Chevrefeuille",
+    icon: "mdi:github",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/adrien-gregorj-197851108/",
+    icon: "mdi:linkedin",
+  },
+  {
+    name: "Google Scholar",
+    url: "https://scholar.google.co.uk/citations?user=ewQrLacAAAAJ&hl=en",
+    icon: "fa6-brands:google-scholar",
+  },
+];
 </script>
 
 <template>
@@ -16,17 +34,30 @@ const publicationList: Publication[] = publications;
       >
         <div class="flex flex-col items-center space-y-10 md:w-2/5">
           <img
-            class="h-60 w-60 rounded-full"
-            src="/images/placeholder_profile.jpg"
+            class="h-60 w-60 rounded-full object-cover"
+            src="/images/profile.jpeg"
             alt="Profile picture"
           />
-          <div class="text-center">
+          <div class="flex flex-col space-y-1 text-center">
             <h1 class="text-4xl">
               Adrien <span class="font-medium">Gregorj</span>
             </h1>
             <p class="text-2xl text-slate-400">
               {{ $t("home.position") }}
             </p>
+            <p class="text-lg font-light text-slate-400">
+              adrien-gregorj[at]s.okayama-u.ac.jp
+            </p>
+          </div>
+          <div class="flex space-x-8">
+            <a
+              v-for="link in links"
+              :key="link.name"
+              :href="link.url"
+              class="text-slate-400 transition-colors hover:text-slate-600"
+            >
+              <Icon :name="link.icon" class="h-12 w-12" />
+            </a>
           </div>
         </div>
         <div class="flex flex-col space-y-10 md:w-3/5">
