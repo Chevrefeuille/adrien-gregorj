@@ -56,7 +56,7 @@ const links = [
               :href="link.url"
               class="text-slate-400 transition-colors hover:text-slate-600"
             >
-              <Icon :name="link.icon" class="h-12 w-12" />
+              <Icon :name="link.icon" class="h-10 w-10" />
             </a>
           </div>
         </div>
