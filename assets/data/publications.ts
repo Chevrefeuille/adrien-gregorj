@@ -7,30 +7,6 @@ export interface Publication {
 
 const publications: Publication[] = [
   {
-    title: "Spontaneous gait synchronisation in the wild",
-    authors: [
-      "Adrien Gregorj",
-      "Zeynep Yücel",
-      "Francesco Zanlungo",
-      "Takayuki Kanda",
-    ],
-    information: "Chaos, Solitons & Fractals, 209, 118428, August 2026",
-    doi: "10.1016/j.chaos.2026.118428",
-  },
-  {
-    title:
-      "Ecological data reveal imbalances in human–human collision avoidance due to dyads' social interaction",
-    authors: [
-      "Adrien Gregorj",
-      "Zeynep Yücel",
-      "Francesco Zanlungo",
-      "Takayuki Kanda",
-    ],
-    information:
-      "Transportation Research Part F: Traffic Psychology and Behaviour, 109, 1313-1333, February 2026",
-    doi: "10.1016/j.trf.2025.01.039",
-  },
-  {
     title:
       "Asymmetries in Group-Individual Collision Avoidance due to Social Factors",
     authors: [
@@ -71,7 +47,7 @@ const publications: Publication[] = [
   {
     title: "Estimating social relation from trajectories",
     authors: [
-      "Zeynep Yücel",
+      "Zeynep Yucel",
       "Francesco Zanlungo",
       "Claudio Feliciani",
       "Adrien Gregorj",
@@ -103,7 +79,7 @@ const publications: Publication[] = [
       "Masahiro Shiomi",
     ],
     information:
-      "Interactive Collaborative Robotics: 4th International Conference, ICR 2019, Springer, August 2019",
+      "Interactive Collaborative Robotics: 4th International Conference, ICR 2019",
     doi: "10.1007/978-3-030-26118-4_8",
   },
 ];
