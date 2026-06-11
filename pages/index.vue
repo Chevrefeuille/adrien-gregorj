@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { ref } from "vue";
+import { useKonamiCode } from "@/composables/useKonamiCode";
+
+const easterEgg = ref(false);
+useKonamiCode(() => (easterEgg.value = !easterEgg.value));
 
 const { t } = useI18n();
 
@@ -33,11 +38,20 @@ const links = [
         class="mx-auto flex max-w-screen-xl flex-col space-y-8 p-8 md:flex-row md:space-x-10 md:space-y-0"
       >
         <div class="flex flex-col items-center space-y-10 md:w-2/5">
-          <img
-            class="h-60 w-60 rounded-full object-cover"
-            src="/images/profile.jpeg"
-            alt="Profile picture"
-          />
+          <div class="relative h-60 w-60">
+            <Transition name="crossfade" mode="out-in">
+              <img
+                :key="easterEgg ? 'secret' : 'normal'"
+                class="absolute h-60 w-60 rounded-full object-cover shadow-md"
+                :src="
+                  easterEgg
+                    ? '/images/profile_secret.jpeg'
+                    : '/images/profile.jpeg'
+                "
+                alt="Profile picture"
+              />
+            </Transition>
+          </div>
           <div class="flex flex-col space-y-1 text-center">
             <h1 class="text-4xl">
               Adrien <span class="font-medium">Gregorj</span>
@@ -115,3 +129,23 @@ const links = [
     </div>
   </div>
 </template>
+
+<style scoped>
+.crossfade-enter-active,
+.crossfade-leave-active {
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform; /* Tells the browser to use GPU acceleration */
+}
+
+.crossfade-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.crossfade-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+</style>
