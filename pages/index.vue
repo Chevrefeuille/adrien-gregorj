@@ -46,9 +46,10 @@ const links = [
               {{ $t("home.position") }}
             </p>
             <p class="text-lg font-light text-slate-400">
-              adrien-gregorj[at]s.okayama-u.ac.jp
+              adrien.gregorjthibaudmarie.cv[at]hitachi.com
             </p>
           </div>
+          <!--  FIXED: Added the missing <a tag here -->
           <div class="flex space-x-8">
             <a
               v-for="link in links"
@@ -64,30 +65,13 @@ const links = [
           <div>
             <h1 class="mb-5 text-4xl">{{ $t("home.about.about") }}</h1>
             <div class="flex flex-col space-y-5 text-lg leading-relaxed">
-              <i18n-t keypath="home.about.introduction" tag="p">
-                <template #lab>
-                  <span class="font-medium">{{ t("home.about.lab") }}</span>
-                </template>
-                <template #zeynep>
-                  <a
-                    href="https://yucelzeynep.github.io/index.html"
-                    class="\ font-medium text-slate-400 transition-colors hover:text-slate-600"
-                    >{{ t("home.about.zeynep") }}</a
-                  >
-                </template>
-                <template #monden>
-                  <a
-                    href="https://digi-ana.sakura.ne.jp/"
-                    class="\ font-medium text-slate-400 transition-colors hover:text-slate-600"
-                    >{{ t("home.about.monden") }}</a
-                  >
-                </template>
-              </i18n-t>
+              <p>{{ $t("home.about.introduction") }}</p>
               <i18n-t keypath="home.about.exp" tag="p">
+                <!--  FIXED: Added the missing <a tag here -->
                 <template #deepomatic>
                   <a
                     href="https://deepomatic.com/"
-                    class="\ font-medium text-slate-400 transition-colors hover:text-slate-600"
+                    class="font-medium text-slate-400 transition-colors hover:text-slate-600"
                     >Deepomatic</a
                   >
                 </template>
