@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Raleway"],
+        jp: ["Noto Sans JP", "sans-serif"],
       },
     },
   },

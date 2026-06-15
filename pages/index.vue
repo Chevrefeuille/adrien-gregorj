@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+
 import { ref } from "vue";
 import { useKonamiCode } from "@/composables/useKonamiCode";
 
 const easterEgg = ref(false);
 useKonamiCode(() => (easterEgg.value = !easterEgg.value));
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 import publications, { type Publication } from "@/assets/data/publications";
 
@@ -32,7 +33,7 @@ const links = [
 </script>
 
 <template>
-  <div>
+  <div :class="{ 'font-jp': locale === 'ja' }">
     <div class="min-h-[90vh] pt-32 md:pt-60">
       <div
         class="mx-auto flex max-w-screen-xl flex-col space-y-8 p-8 md:flex-row md:space-x-10 md:space-y-0"
@@ -54,13 +55,21 @@ const links = [
           </div>
           <div class="flex flex-col space-y-1 text-center">
             <h1 class="text-4xl">
-              Adrien <span class="font-medium">Gregorj</span>
+              <template v-if="locale === 'ja'">
+                <ruby>Adrien<rt>アドリアン</rt></ruby
+                >&nbsp;<ruby class="font-medium"
+                  >Gregorj<rt>グレゴリー</rt></ruby
+                >
+              </template>
+              <template v-else>
+                Adrien <span class="font-medium">Gregorj</span>
+              </template>
             </h1>
             <p class="text-2xl text-slate-400">
               {{ $t("home.position") }}
             </p>
             <p class="text-lg font-light text-slate-400">
-              adrien.gregorjthibaudmarie.cv[at]hitachi.com
+              adrien.gregorj[at]gmail.com
             </p>
           </div>
           <!--  FIXED: Added the missing <a tag here -->
